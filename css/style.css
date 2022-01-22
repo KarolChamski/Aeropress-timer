@@ -124,6 +124,10 @@
   display: none;
 }
 
+.step4 {
+  display: none;
+}
+
 .white {
   background-color: #fff;
 }
