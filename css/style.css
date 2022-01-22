@@ -3,6 +3,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Share Tech Mono", sans-serif;
 }
 
 .app {
@@ -93,6 +94,8 @@
 .page__button {
   width: 140px;
   height: 46px;
+  margin-top: 2rem;
+  font-size: 18px;
   display: block;
   background-color: #ffe053;
   border: 1px solid #000000;
@@ -125,7 +128,7 @@
   background-color: #fff;
 }
 
-.last-page {
+.center-footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -193,6 +196,10 @@
 }
 
 .step5 {
+  display: none;
+}
+
+.step6 {
   display: none;
 }
 
