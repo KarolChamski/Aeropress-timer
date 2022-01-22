@@ -102,6 +102,14 @@
   cursor: pointer;
 }
 
+.page__reset {
+  display: none;
+}
+
+.page__next {
+  display: none;
+}
+
 .page__buttons {
   width: 100%;
   display: -webkit-box;
@@ -180,26 +188,13 @@
 
 .step1 {
   background-color: #ffe053;
-  display: none;
 }
 
-.step2 {
-  display: none;
+.step1__button {
+  background-color: #fff;
 }
 
-.step3 {
-  display: none;
-}
-
-.step4 {
-  display: none;
-}
-
-.step5 {
-  display: none;
-}
-
-.step6 {
+.hide {
   display: none;
 }
 
