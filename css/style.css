@@ -1,0 +1,85 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.step1 {
+  background-color: #FFE053;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page__header {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page__footer {
+  text-align: center;
+}
+
+.page__title {
+  font-size: 24px;
+}
+
+.page__button {
+  width: 140px;
+  height: 46px;
+  display: block;
+  background-color: #FFE053;
+  border: 1px solid #000000;
+}
+
+.page__statistic {
+  display: block;
+  width: 100px;
+  margin-top: 4rem;
+  background: none;
+  border: none;
+}
+
+.page__statistic p {
+  border-bottom: 2px solid #000;
+}
+
+.white {
+  background-color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
