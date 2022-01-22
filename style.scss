@@ -22,8 +22,8 @@
     justify-content: center;
   }
   &__step {
-      position: absolute;
-      justify-self: center;
+    position: absolute;
+    justify-self: center;
   }
   &__close {
     position: absolute;
@@ -37,11 +37,11 @@
     align-items: center;
     justify-content: space-between;
   }
-  &__timer{
-      font-size: 72px;
+  &__timer {
+    font-size: 72px;
   }
-  &__description{
-      color: rgba($color: #000000, $alpha: 0.4);
+  &__description {
+    color: rgba($color: #000000, $alpha: 0.4);
   }
   &__footer {
     text-align: center;
@@ -60,6 +60,11 @@
     border: 1px solid #000000;
     cursor: pointer;
   }
+  &__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   &__statistic {
     display: block;
     width: 100px;
@@ -69,6 +74,39 @@
   }
   &__statistic p {
     border-bottom: 2px solid #000;
+  }
+}
+
+.white {
+  background-color: #fff;
+}
+.last-page {
+  justify-content: center;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  &__content {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    height: 198px;
+    // width: 272px;
+  }
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__close button {
+    border: none;
+    background: none;
   }
 }
 .step1 {
@@ -87,9 +125,6 @@
 .step5 {
   display: none;
 }
-.white {
-  background-color: #fff;
-}
-.last-page{
-    justify-content: center;
+.modal {
+  display: none;
 }

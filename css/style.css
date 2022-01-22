@@ -99,6 +99,16 @@
   cursor: pointer;
 }
 
+.page__buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .page__statistic {
   display: block;
   width: 100px;
@@ -109,6 +119,60 @@
 
 .page__statistic p {
   border-bottom: 2px solid #000;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.last-page {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  height: 198px;
+}
+
+.modal__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.modal__close button {
+  border: none;
+  background: none;
 }
 
 .step1 {
@@ -132,13 +196,7 @@
   display: none;
 }
 
-.white {
-  background-color: #fff;
-}
-
-.last-page {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.modal {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
