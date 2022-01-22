@@ -128,7 +128,17 @@
   display: none;
 }
 
+.step5 {
+  display: none;
+}
+
 .white {
   background-color: #fff;
+}
+
+.last-page {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
