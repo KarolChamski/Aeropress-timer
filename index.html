@@ -16,7 +16,7 @@
   <body>
     <div class="app">
 
-      <div class="step1 page">
+      <div class="step1 hide page">
         <div class="page__header">
           <p>step 1</p>
         </div>
@@ -48,9 +48,13 @@
         </div>
 
         <div class="page__footer">
-          <img src="/img/arrow_left.png" alt="" />
+          <button class="page__arrow step2__left">
+            <img src="/img/arrow_left.png" alt="" />
+          </button>
           <p>2/6</p>
-          <img src="/img/arrow_right.png" alt="" />
+          <button class="page__arrow step2__right">
+            <img src="/img/arrow_right.png" alt="" />
+          </button>
         </div>
       </div>
 
@@ -72,9 +76,13 @@
         </div>
 
         <div class="page__footer">
-          <img src="/img/arrow_left.png" alt="" />
+          <button class="page__arrow step3__left">
+            <img src="/img/arrow_left.png" alt="" />
+          </button>
           <p>3/6</p>
-          <img src="/img/arrow_right.png" alt="" />
+          <button class="page__arrow step3__right">
+            <img src="/img/arrow_right.png" alt="" />
+          </button>
         </div>
       </div>
 
@@ -96,9 +104,13 @@
         </div>
 
         <div class="page__footer">
-          <img src="/img/arrow_left.png" alt="" />
+          <button class="page__arrow step4__left">
+            <img src="/img/arrow_left.png" alt="" />
+          </button>
           <p>4/6</p>
-          <img src="/img/arrow_right.png" alt="" />
+          <button class="page__arrow step4__right">
+            <img src="/img/arrow_right.png" alt="" />
+          </button>
         </div>
       </div>
 
@@ -119,9 +131,13 @@
         </div>
 
         <div class="page__footer">
-          <img src="/img/arrow_left.png" alt="" />
+          <button class="page__arrow step5__left">
+            <img src="/img/arrow_left.png" alt="" />
+          </button>
           <p>5/6</p>
-          <img src="/img/arrow_right.png" alt="" />
+          <button class="page__arrow step5__right">
+            <img src="/img/arrow_right.png" alt="" />
+          </button>
         </div>
       </div>
 
@@ -132,12 +148,33 @@
 
         <div class="page__main">
           <p class="page__title">Enjoy your coffee!</p>
-          <button class="page__button ">Home</button>
+          <button class="page__button home">Home</button>
         </div>
 
         <div class="page__footer center-footer">
           <p>6/6</p>
         </div>
+      </div>
+
+      <div class="page  statistics">
+
+        <div class="page__header">
+          <p class="page__step">statistics</p>
+          <button class="page__close">
+            <img src="/img/clear.png" alt="" />
+          </button>
+        </div>
+
+        <div class="page__main">
+          <p class="page__title">TOTAL: </p>
+          
+          
+        </div>
+
+        <div class="page__footer center-footer">
+          <p>NARA</p>
+        </div>
+
       </div>
 
       <div class="modal page">
@@ -156,6 +193,9 @@
           </div>
         </div>
       </div>
+
+
+
     </div>
     <script src="/app.js"></script>
   </body>

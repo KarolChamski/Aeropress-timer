@@ -52,6 +52,7 @@
   }
   &__title {
     font-size: 24px;
+    text-align: center;
   }
   &__button {
     width: 140px;
@@ -78,6 +79,10 @@
   }
   &__statistic p {
     border-bottom: 2px solid #000;
+  }
+  &__arrow{
+    border: none;
+    background: none;
   }
 }
 
