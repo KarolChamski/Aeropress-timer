@@ -6,6 +6,8 @@ const step4Page = document.querySelector(".step4");
 const step5Page = document.querySelector(".step5");
 const step6Page = document.querySelector(".step6");
 
+const statisticsPage = document.querySelector(".statistics");
+
 // next buttons
 const step1NextButton = document.querySelector(".step1__button");
 const step2NextButton = document.querySelector(".step2__button");
@@ -28,6 +30,14 @@ const step5RightArrow = document.querySelector(".step5__right");
 const closeButton = document.querySelector("page__close");
 // homeButton
 const homeButton = document.querySelector(".home");
+// statistics button
+const statsButton = document.querySelector(".page__statistic");
+// statistic sections
+const monthlyBox = document.querySelector(".statistics__monthly");
+const yearlyBox = document.querySelector(".statistics__yearly");
+// statistics section buttons
+const monthlyButton = document.querySelector(".monthly__button");
+const yearlyButton = document.querySelector(".yearly__button");
 // first countdown |step3
 const step3Timer = document.querySelector(".step3__timer");
 const step3Start = document.querySelector(".step3__start");
@@ -191,6 +201,32 @@ const nextPage5 = function () {
   addStats(year, month);
 };
 
+const showStatistics = function () {
+  step1Page.classList.toggle("hide");
+  statisticsPage.classList.toggle("hide");
+  updateMonthlyStats();
+
+  total2022.innerHTML = updateYearlyStats(2022);
+  total2023.innerHTML = updateYearlyStats(2023);
+  total2024.innerHTML = updateYearlyStats(2024);
+  total2025.innerHTML = updateYearlyStats(2025);
+};
+
+const showMonthlyStats = function () {
+    yearlyBox.classList.toggle('hide');
+    monthlyBox.classList.toggle('hide');
+    monthlyButton.classList.toggle('underline');
+    yearlyButton.classList.toggle('underline')
+}
+const showYearlyStats = function () {
+    monthlyBox.classList.toggle('hide');
+    yearlyBox.classList.toggle('hide');
+    monthlyButton.classList.toggle('underline');
+    yearlyButton.classList.toggle('underline')
+}
+
+
+
 // Setting curent date
 const current = new Date();
 const month = current.toLocaleString("en-US", { month: "long" });
@@ -268,7 +304,7 @@ const setStartingData = () => {
 // Add new stats
 
 const addStats = function (currYear, currMonth) {
-  // Create new empty object
+  // Create new empty string
   let stats = "";
   // catch correct year object from localstorage and save it as stats
   stats = JSON.parse(localStorage.getItem(currYear));
@@ -278,7 +314,54 @@ const addStats = function (currYear, currMonth) {
   localStorage.setItem(currYear, JSON.stringify(stats));
 };
 
+// Show monthly statistics
+const stats01 = document.querySelector(".statistics__january");
+const stats02 = document.querySelector(".statistics__february");
+const stats03 = document.querySelector(".statistics__march");
+const stats04 = document.querySelector(".statistics__april");
+const stats05 = document.querySelector(".statistics__may");
+const stats06 = document.querySelector(".statistics__june");
+const stats07 = document.querySelector(".statistics__july");
+const stats08 = document.querySelector(".statistics__august");
+const stats09 = document.querySelector(".statistics__september");
+const stats10 = document.querySelector(".statistics__october");
+const stats11 = document.querySelector(".statistics__november");
+const stats12 = document.querySelector(".statistics__december");
+const updateMonthlyStats = function () {
+  let localStats = JSON.parse(localStorage.getItem(year));
 
+  stats01.innerHTML = localStats.January;
+  stats02.innerHTML = localStats.February;
+  stats03.innerHTML = localStats.March;
+  stats04.innerHTML = localStats.April;
+  stats05.innerHTML = localStats.May;
+  stats06.innerHTML = localStats.June;
+  stats07.innerHTML = localStats.July;
+  stats08.innerHTML = localStats.August;
+  stats09.innerHTML = localStats.September;
+  stats10.innerHTML = localStats.October;
+  stats11.innerHTML = localStats.November;
+  stats12.innerHTML = localStats.December;
+};
+
+// Show yearly statistics
+const total2022 = document.querySelector(".statistics__2022");
+const total2023 = document.querySelector(".statistics__2023");
+const total2024 = document.querySelector(".statistics__2024");
+const total2025 = document.querySelector(".statistics__2025");
+
+const  updateYearlyStats = function (currYear) {
+  let localStats = JSON.parse(localStorage.getItem(currYear));
+  let total = 0;
+  for (let value in localStats) {
+    total += localStats[value];
+  }
+  return total;
+};
+// Count all stats
+const allStats = function () {
+    
+}
 
 
 // Next page Add event listeners
@@ -302,3 +385,9 @@ step4LeftArrow.addEventListener("click", step4PreviousPage);
 step5LeftArrow.addEventListener("click", step5PreviousPage);
 // Step 6 home button
 homeButton.addEventListener("click", step6PreviousPage);
+
+// Statistics open button
+statsButton.addEventListener("click", showStatistics);
+// Statistics sections buttons
+monthlyButton.addEventListener("click", showMonthlyStats);
+yearlyButton.addEventListener("click", showYearlyStats)

@@ -85,6 +85,31 @@
     background: none;
   }
 }
+.statistics{
+  &__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #FFE053;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  &__button{
+    background: none;
+    border: none;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  &__main{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
 
 .white {
   background-color: #fff;
@@ -127,6 +152,9 @@
 }
 .hide{
   display: none;
+}
+.underline{
+  border-bottom: 2px solid black;
 }
 .modal {
   display: none;

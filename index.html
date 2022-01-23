@@ -15,8 +15,7 @@
   </head>
   <body>
     <div class="app">
-
-      <div class="step1 hide page">
+      <div class="step1 page">
         <div class="page__header">
           <p>step 1</p>
         </div>
@@ -126,7 +125,7 @@
           <p class="page__timer step5__timer">0: 15 s</p>
           <p class="page__title">Press start, then push plunger down</p>
           <button class="page__button step5__start">Start</button>
-          <button class="page__button hide step5__reset">Reset</button> 
+          <button class="page__button hide step5__reset">Reset</button>
           <button class="page__button hide step5__next">Next</button>
         </div>
 
@@ -156,8 +155,7 @@
         </div>
       </div>
 
-      <div class="page  statistics">
-
+      <div class="page hide statistics">
         <div class="page__header">
           <p class="page__step">statistics</p>
           <button class="page__close">
@@ -165,16 +163,40 @@
           </button>
         </div>
 
-        <div class="page__main">
-          <p class="page__title">TOTAL: </p>
+        <div class="statistics__main">
+          <p class="page__title">ALL:</p>
+          <div class="statistics__buttons">
+            <button class="statistics__button monthly__button underline">Monthly</button>
+            <button class="statistics__button yearly__button">Yearly</button>
+          </div>
           
-          
-        </div>
+            
+            <div class="statistics__monthly">
+              <p>January: <span class="statistics__january"></span></p>
+              <p>February: <span class="statistics__february"></span></p>
+              <p>March: <span class="statistics__march"></span></p>
+              <p>April: <span class="statistics__april"></span></p>
+              <p>May: <span class="statistics__may"></span></p>
+              <p>June: <span class="statistics__june"></span></p>
+              <p>July: <span class="statistics__july"></span></p>
+              <p>August: <span class="statistics__august"></span></p>
+              <p>September: <span class="statistics__september"></span></p>
+              <p>October: <span class="statistics__october"></span></p>
+              <p>November: <span class="statistics__november"></span></p>
+              <p>December: <span class="statistics__december"></span></p>
+            </div>
+            <div class="statistics__yearly hide">
+              <p>2022: <span class="statistics__2022"></span></p>
+              <p>2023: <span class="statistics__2023"></span></p>
+              <p>2024: <span class="statistics__2024"></span></p>
+              <p>2025: <span class="statistics__2025"></span></p>
+            </div>
+            
+          </div>
 
         <div class="page__footer center-footer">
-          <p>NARA</p>
+          
         </div>
-
       </div>
 
       <div class="modal page">
@@ -193,9 +215,6 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
     <script src="/app.js"></script>
   </body>
