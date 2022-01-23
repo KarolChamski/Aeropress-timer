@@ -102,14 +102,6 @@
   cursor: pointer;
 }
 
-.page__reset {
-  display: none;
-}
-
-.page__next {
-  display: none;
-}
-
 .page__buttons {
   width: 100%;
   display: -webkit-box;

@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Aeropress Timer</title>
   </head>
   <body>
     <div class="app">
+
       <div class="step1 page">
         <div class="page__header">
           <p>step 1</p>
@@ -59,12 +63,12 @@
         </div>
 
         <div class="page__main">
-          <p class="page__timer">30s</p>
+          <p class="page__timer step3__timer">0: 30 s</p>
           <p class="page__title">Add 40 g water</p>
           <p class="page__description">and press start</p>
-          <button class="page__button page__start">Start</button>
-          <button class="page__button page__reset">Reset</button>
-          <button class="page__button page__next">Next</button>
+          <button class="page__button step3__start">Start</button>
+          <button class="page__button hide step3__reset">Reset</button>
+          <button class="page__button hide step3__next">Next</button>
         </div>
 
         <div class="page__footer">
@@ -73,9 +77,7 @@
           <img src="/img/arrow_right.png" alt="" />
         </div>
       </div>
-      
-      
-      
+
       <div class="step4 page hide">
         <div class="page__header">
           <p class="page__step">step 4</p>
@@ -85,12 +87,12 @@
         </div>
 
         <div class="page__main">
-          <p class="page__timer">1:30s</p>
+          <p class="page__timer step4__timer">1: 30s</p>
           <p class="page__title">Add 200 g water</p>
           <p class="page__description">and press start</p>
-          <button class="page__button page__start">Start</button>
-          <button class="page__button page__reset">Reset</button>
-          <button class="page__button page__next">Next</button>
+          <button class="page__button step4__start">Start</button>
+          <button class="page__button hide step4__reset">Reset</button>
+          <button class="page__button hide step4__next">Next</button>
         </div>
 
         <div class="page__footer">
@@ -99,9 +101,7 @@
           <img src="/img/arrow_right.png" alt="" />
         </div>
       </div>
-      
-      
-      
+
       <div class="step5 page hide">
         <div class="page__header">
           <p class="page__step">step 5</p>
@@ -111,11 +111,11 @@
         </div>
 
         <div class="page__main">
-          <p class="page__timer">15s</p>
+          <p class="page__timer step5__timer">0: 15 s</p>
           <p class="page__title">Press start, then push plunger down</p>
-          <button class="page__button page__start">Start</button>
-          <button class="page__button page__reset">Reset</button>
-          <button class="page__button page__next">Next</button>
+          <button class="page__button step5__start">Start</button>
+          <button class="page__button hide step5__reset">Reset</button> 
+          <button class="page__button hide step5__next">Next</button>
         </div>
 
         <div class="page__footer">
@@ -124,47 +124,38 @@
           <img src="/img/arrow_right.png" alt="" />
         </div>
       </div>
-      
-      
+
       <div class="step6 page hide">
         <div class="page__header">
           <p class="page__step">step 6</p>
-          <button class="page__close">
-            <img src="/img/clear.png" alt="" />
-          </button>
         </div>
 
         <div class="page__main">
           <p class="page__title">Enjoy your coffee!</p>
-          <button class="page__button">Home</button>
+          <button class="page__button ">Home</button>
         </div>
 
         <div class="page__footer center-footer">
           <p>6/6</p>
         </div>
       </div>
-      
-      
+
       <div class="modal page">
         <div class="modal__content">
-            <div class="modal__close">
-                <button>
-                    <img src="/img/clear.png" alt="" />
-                  </button>
+          <div class="modal__close">
+            <button>
+              <img src="/img/clear.png" alt="" />
+            </button>
+          </div>
+          <div class="page__main">
+            <p class="page__title">Do you want to stop making coffee?</p>
+            <div class="page__buttons">
+              <button class="page__button">Yes</button>
+              <button class="page__button">No</button>
             </div>
-            <div class="page__main">
-              <p class="page__title">Do you want to stop making coffee?</p>
-              <div class="page__buttons">
-                  <button class="page__button">Yes</button>
-                  <button class="page__button">No</button>
-              </div>
-            </div>
+          </div>
         </div>
-
       </div>
-
-
-
     </div>
     <script src="/app.js"></script>
   </body>
