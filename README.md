@@ -1,4 +1,4 @@
-# Aeropress Timer :coffee: :watch: 
+# Aeropress Timer (PWA) :coffee: :watch: 
 Progressive Web Application (PWA) that helps you to make best aeropress coffee! <br/>
 Step by step guide through whole brewing proccess. <br/>
 It counts monthly/yearly coffee stats based on localstorage of your browser<br/> 
