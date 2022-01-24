@@ -8,6 +8,7 @@ const step6Page = document.querySelector(".step6");
 
 const statisticsPage = document.querySelector(".statistics");
 
+const modalPage = document.querySelector(".modal");
 // next buttons
 const step1NextButton = document.querySelector(".step1__button");
 const step2NextButton = document.querySelector(".step2__button");
@@ -27,7 +28,11 @@ const step4RightArrow = document.querySelector(".step4__right");
 const step5RightArrow = document.querySelector(".step5__right");
 
 // close button
-const closeButton = document.querySelector("page__close");
+const closeButtons = document.querySelectorAll(".page__close");
+// modal buttons 
+const modalCloseBtn = document.querySelector('.modal__close');
+const modalAcceptBtn = document.querySelector('.modal__accept');
+const modalCancelBtn = document.querySelector('.modal__cancel');
 // homeButton
 const homeButton = document.querySelector(".home");
 // statistics button
@@ -38,6 +43,8 @@ const yearlyBox = document.querySelector(".statistics__yearly");
 // statistics section buttons
 const monthlyButton = document.querySelector(".monthly__button");
 const yearlyButton = document.querySelector(".yearly__button");
+// statistics close button 
+const closeStatistics = document.querySelector(".statistics__close");
 // first countdown |step3
 const step3Timer = document.querySelector(".step3__timer");
 const step3Start = document.querySelector(".step3__start");
@@ -78,13 +85,15 @@ const step3Countdown = function () {
   step3Reset.classList.remove("hide");
   const step3Interval = setInterval(updateCountdownStep3, 1000);
 
-  step3Reset.addEventListener("click", function () {
+   const clearStep3Countdown = function (){
     timeStep3 = startingMinutesStep3 * 60;
     step3Timer.innerHTML = `0: 30 s`;
     clearTimeout(step3Interval);
     step3Reset.classList.add("hide");
     step3Start.classList.remove("hide");
-  });
+   }
+
+  step3Reset.addEventListener("click", clearStep3Countdown);
 };
 step3Start.addEventListener("click", step3Countdown);
 
@@ -112,13 +121,18 @@ const step4Countdown = function () {
   step4Reset.classList.remove("hide");
   const step4Interval = setInterval(updateCountdownStep4, 1000);
 
-  step4Reset.addEventListener("click", function () {
+  const clearStep4Countdown = function () {
+
     timeStep4 = startingMinutesStep4 * 60;
     step4Timer.innerHTML = `1: 30 s`;
     clearTimeout(step4Interval);
     step4Reset.classList.add("hide");
     step4Start.classList.remove("hide");
-  });
+
+
+  }
+
+  step4Reset.addEventListener("click", clearStep4Countdown);
 };
 step4Start.addEventListener("click", step4Countdown);
 
@@ -145,13 +159,17 @@ const step5Countdown = function () {
   step5Reset.classList.remove("hide");
   const step5Interval = setInterval(updateCountdownStep5, 1000);
 
-  step5Reset.addEventListener("click", function () {
+  const clearStep5Countdown = function () {
+
     timeStep5 = startingMinutesStep5 * 60;
     step5Timer.innerHTML = `0: 15 s`;
     clearTimeout(step5Interval);
     step5Reset.classList.add("hide");
     step5Start.classList.remove("hide");
-  });
+
+  }
+
+  step5Reset.addEventListener("click", clearStep5Countdown);
 };
 step5Start.addEventListener("click", step5Countdown);
 
@@ -176,6 +194,10 @@ step6PreviousPage = () => {
   step6Page.classList.toggle("hide");
   step1Page.classList.toggle("hide");
 };
+statisticsPreviousPage = () => {
+  statisticsPage.classList.toggle('hide');
+  step1Page.classList.toggle("hide");
+}
 
 // next page functions
 const nextPage1 = function () {
@@ -200,6 +222,25 @@ const nextPage5 = function () {
   step6Page.classList.toggle("hide");
   addStats(year, month);
 };
+
+// show modal component
+
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', ()=> {
+    modalPage.classList.toggle('hide')
+  })
+})
+
+// modal component functions
+const closeModal = function () {
+  modalPage.classList.toggle('hide')
+};
+// modal go home button hunction
+const modalHome = function(){
+  location.reload()
+}
+
+// Statistics functions
 
 const showStatistics = function () {
   step1Page.classList.toggle("hide");
@@ -390,4 +431,11 @@ homeButton.addEventListener("click", step6PreviousPage);
 statsButton.addEventListener("click", showStatistics);
 // Statistics sections buttons
 monthlyButton.addEventListener("click", showMonthlyStats);
-yearlyButton.addEventListener("click", showYearlyStats)
+yearlyButton.addEventListener("click", showYearlyStats);
+// Statistics close button
+closeStatistics.addEventListener("click", statisticsPreviousPage);
+// Modal component close buttons
+modalCancelBtn.addEventListener('click', closeModal);
+modalCloseBtn.addEventListener('click', closeModal);
+
+modalAcceptBtn.addEventListener('click', modalHome)
