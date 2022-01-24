@@ -1,0 +1,30 @@
+{
+    "name": "Aeropress timer",
+    "short_name": "Aeropress timer",
+    "icons": [
+      {
+        "src":"/img/32px.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src":"/img/96px.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src":"/img/120px.png",
+        "type": "image/png",
+        "sizes": "120x120"
+      },
+      {
+        "src":"/img/192px.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#fff",
+    "theme_color": "#ffe053",
+    "display": "fullscreen"
+  }

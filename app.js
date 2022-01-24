@@ -37,6 +37,8 @@ const modalCancelBtn = document.querySelector('.modal__cancel');
 const homeButton = document.querySelector(".home");
 // statistics button
 const statsButton = document.querySelector(".page__statistic");
+// statistics total
+const statsTotal = document.querySelector('.statistics__total');
 // statistic sections
 const monthlyBox = document.querySelector(".statistics__monthly");
 const yearlyBox = document.querySelector(".statistics__yearly");
@@ -261,10 +263,13 @@ const showStatistics = function () {
   statisticsPage.classList.toggle("hide");
   updateMonthlyStats();
 
+
   total2022.innerHTML = updateYearlyStats(2022);
   total2023.innerHTML = updateYearlyStats(2023);
   total2024.innerHTML = updateYearlyStats(2024);
   total2025.innerHTML = updateYearlyStats(2025);
+// SUM All stats
+  statsTotal.innerHTML = updateYearlyStats(2022) + updateYearlyStats(2023)+ updateYearlyStats(2024) + updateYearlyStats(2025)
 };
 
 const showMonthlyStats = function () {
@@ -280,58 +285,12 @@ const showYearlyStats = function () {
     yearlyButton.classList.toggle('underline')
 }
 
-
-
-
-
 // Setting starting localstorage
 const setStartingData = () => {
   // check if localstorage exist
   if (localStorage.getItem(year) == null) {
     // if localstorage doesn't exist - create new objects
-    const stats2022 = {
-      January: 0,
-      February: 0,
-      March: 0,
-      April: 0,
-      May: 0,
-      June: 0,
-      July: 0,
-      August: 0,
-      September: 0,
-      October: 0,
-      November: 0,
-      December: 0,
-    };
-    const stats2023 = {
-      January: 0,
-      February: 0,
-      March: 0,
-      April: 0,
-      May: 0,
-      June: 0,
-      July: 0,
-      August: 0,
-      September: 0,
-      October: 0,
-      November: 0,
-      December: 0,
-    };
-    const stats2024 = {
-      January: 0,
-      February: 0,
-      March: 0,
-      April: 0,
-      May: 0,
-      June: 0,
-      July: 0,
-      August: 0,
-      September: 0,
-      October: 0,
-      November: 0,
-      December: 0,
-    };
-    const stats2025 = {
+    const monthsInYear = {
       January: 0,
       February: 0,
       March: 0,
@@ -346,6 +305,10 @@ const setStartingData = () => {
       December: 0,
     };
 
+    const stats2022 = monthsInYear;
+    const stats2023 = monthsInYear;
+    const stats2024 = monthsInYear;
+    const stats2025 = monthsInYear;
     localStorage.setItem("2022", JSON.stringify(stats2022));
     localStorage.setItem("2023", JSON.stringify(stats2023));
     localStorage.setItem("2024", JSON.stringify(stats2024));
@@ -410,10 +373,7 @@ const  updateYearlyStats = function (currYear) {
   }
   return total;
 };
-// Count all stats
-const allStats = function () {
-    
-}
+
 
 
 // Next page Add event listeners
