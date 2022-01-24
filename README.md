@@ -1,9 +1,7 @@
 # Aeropress Timer (PWA) :coffee: :watch: 
-Progressive Web Application (PWA) that helps you to make best aeropress coffee! <br/>
-Step by step guide through whole brewing proccess. <br/>
-It counts monthly/yearly coffee stats based on localstorage of your browser<br/> 
-App use localstorage 
-
+Progressive Web Application that helps you to make best aeropress coffee! <br/>
+Step-by-step guide through the entire brewing process. <br/>
+Counts monthly / yearly coffee stats based on your browser's localmemory <br/>
 
 ### Technologies used
 I created this App with Vanilla Javascript, SCSS, PWA tools<br/>
