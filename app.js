@@ -29,25 +29,25 @@ const step5RightArrow = document.querySelector(".step5__right");
 
 // close button
 const closeButtons = document.querySelectorAll(".page__close");
-// modal buttons 
-const modalCloseBtn = document.querySelector('.modal__close');
-const modalAcceptBtn = document.querySelector('.modal__accept');
-const modalCancelBtn = document.querySelector('.modal__cancel');
+// modal buttons
+const modalCloseBtn = document.querySelector(".modal__close");
+const modalAcceptBtn = document.querySelector(".modal__accept");
+const modalCancelBtn = document.querySelector(".modal__cancel");
 // homeButton
 const homeButton = document.querySelector(".home");
 // statistics button
 const statsButton = document.querySelector(".page__statistic");
 // statistics total
-const statsTotal = document.querySelector('.statistics__total');
+const statsTotal = document.querySelector(".statistics__total");
 // statistic sections
 const monthlyBox = document.querySelector(".statistics__monthly");
 const yearlyBox = document.querySelector(".statistics__yearly");
 // statistics section buttons
 const monthlyButton = document.querySelector(".monthly__button");
 const yearlyButton = document.querySelector(".yearly__button");
-// statistics close button 
+// statistics close button
 const closeStatistics = document.querySelector(".statistics__close");
-// pwa__mobile 
+// pwa__mobile
 const pwaPage = document.querySelector(".pwa__mobile");
 const pwaBtn = document.querySelector(".pwa__button");
 // first countdown |step3
@@ -90,13 +90,13 @@ const step3Countdown = function () {
   step3Reset.classList.remove("hide");
   const step3Interval = setInterval(updateCountdownStep3, 1000);
 
-   const clearStep3Countdown = function (){
+  const clearStep3Countdown = function () {
     timeStep3 = startingMinutesStep3 * 60;
     step3Timer.innerHTML = `0: 30 s`;
     clearTimeout(step3Interval);
     step3Reset.classList.add("hide");
     step3Start.classList.remove("hide");
-   }
+  };
 
   step3Reset.addEventListener("click", clearStep3Countdown);
 };
@@ -127,13 +127,12 @@ const step4Countdown = function () {
   const step4Interval = setInterval(updateCountdownStep4, 1000);
 
   const clearStep4Countdown = function () {
-
     timeStep4 = startingMinutesStep4 * 60;
     step4Timer.innerHTML = `1: 30 s`;
     clearTimeout(step4Interval);
     step4Reset.classList.add("hide");
     step4Start.classList.remove("hide");
-  }
+  };
 
   step4Reset.addEventListener("click", clearStep4Countdown);
 };
@@ -163,14 +162,12 @@ const step5Countdown = function () {
   const step5Interval = setInterval(updateCountdownStep5, 1000);
 
   const clearStep5Countdown = function () {
-
     timeStep5 = startingMinutesStep5 * 60;
     step5Timer.innerHTML = `0: 15 s`;
     clearTimeout(step5Interval);
     step5Reset.classList.add("hide");
     step5Start.classList.remove("hide");
-
-  }
+  };
 
   step5Reset.addEventListener("click", clearStep5Countdown);
 };
@@ -202,9 +199,9 @@ step6PreviousPage = () => {
   step1Page.classList.toggle("hide");
 };
 statisticsPreviousPage = () => {
-  statisticsPage.classList.toggle('hide');
+  statisticsPage.classList.toggle("hide");
   step1Page.classList.toggle("hide");
-}
+};
 
 // next page functions
 const nextPage1 = function () {
@@ -231,31 +228,30 @@ const nextPage5 = function () {
 
 // show modal component
 
-closeButtons.forEach(btn => {
-  btn.addEventListener('click', ()=> {
-    modalPage.classList.toggle('hide')
-  })
-})
+closeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    modalPage.classList.toggle("hide");
+  });
+});
 
 // modal component functions
 const closeModal = function () {
-  modalPage.classList.toggle('hide')
+  modalPage.classList.toggle("hide");
 };
 // modal go home button hunction
-const modalHome = function(){
-  location.reload()
-}
+const modalHome = function () {
+  location.reload();
+};
 // PWA message function - detect first visit on website and show message
 const acceptPwaMessage = function () {
   setStartingData();
-  pwaPage.classList.add('hide');
-  step1Page.classList.remove('hide')
+  pwaPage.classList.add("hide");
+  step1Page.classList.remove("hide");
+};
+if (localStorage.getItem(2022) == null) {
+  pwaPage.classList.remove("hide");
+  step1Page.classList.add("hide");
 }
-if (localStorage.getItem(2022) == null){
-  pwaPage.classList.remove('hide');
-  step1Page.classList.add('hide');
-} 
-
 
 // Statistics functions
 const showStatistics = function () {
@@ -263,27 +259,30 @@ const showStatistics = function () {
   statisticsPage.classList.toggle("hide");
   updateMonthlyStats();
 
-
   total2022.innerHTML = updateYearlyStats(2022);
   total2023.innerHTML = updateYearlyStats(2023);
   total2024.innerHTML = updateYearlyStats(2024);
   total2025.innerHTML = updateYearlyStats(2025);
-// SUM All stats
-  statsTotal.innerHTML = updateYearlyStats(2022) + updateYearlyStats(2023)+ updateYearlyStats(2024) + updateYearlyStats(2025)
+  // SUM All stats
+  statsTotal.innerHTML =
+    updateYearlyStats(2022) +
+    updateYearlyStats(2023) +
+    updateYearlyStats(2024) +
+    updateYearlyStats(2025);
 };
 
 const showMonthlyStats = function () {
-    yearlyBox.classList.toggle('hide');
-    monthlyBox.classList.toggle('hide');
-    monthlyButton.classList.toggle('underline');
-    yearlyButton.classList.toggle('underline')
-}
+  yearlyBox.classList.toggle("hide");
+  monthlyBox.classList.toggle("hide");
+  monthlyButton.classList.toggle("underline");
+  yearlyButton.classList.toggle("underline");
+};
 const showYearlyStats = function () {
-    monthlyBox.classList.toggle('hide');
-    yearlyBox.classList.toggle('hide');
-    monthlyButton.classList.toggle('underline');
-    yearlyButton.classList.toggle('underline')
-}
+  monthlyBox.classList.toggle("hide");
+  yearlyBox.classList.toggle("hide");
+  monthlyButton.classList.toggle("underline");
+  yearlyButton.classList.toggle("underline");
+};
 
 // Setting starting localstorage
 const setStartingData = () => {
@@ -365,7 +364,7 @@ const total2023 = document.querySelector(".statistics__2023");
 const total2024 = document.querySelector(".statistics__2024");
 const total2025 = document.querySelector(".statistics__2025");
 
-const  updateYearlyStats = function (currYear) {
+const updateYearlyStats = function (currYear) {
   let localStats = JSON.parse(localStorage.getItem(currYear));
   let total = 0;
   for (let value in localStats) {
@@ -373,8 +372,6 @@ const  updateYearlyStats = function (currYear) {
   }
   return total;
 };
-
-
 
 // Next page Add event listeners
 step1NextButton.addEventListener("click", nextPage1);
@@ -406,8 +403,8 @@ yearlyButton.addEventListener("click", showYearlyStats);
 // Statistics close button
 closeStatistics.addEventListener("click", statisticsPreviousPage);
 // Modal component close buttons
-modalCancelBtn.addEventListener('click', closeModal);
-modalCloseBtn.addEventListener('click', closeModal);
-modalAcceptBtn.addEventListener('click', modalHome);
+modalCancelBtn.addEventListener("click", closeModal);
+modalCloseBtn.addEventListener("click", closeModal);
+modalAcceptBtn.addEventListener("click", modalHome);
 // PWA Actions
-pwaBtn.addEventListener('click', acceptPwaMessage)
+pwaBtn.addEventListener("click", acceptPwaMessage);

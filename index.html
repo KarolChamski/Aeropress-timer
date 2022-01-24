@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffe053">
-    <link rel="apple-touch-icon" sizes="192x192" href="/img/192px.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta name="theme-color" content="#ffe053" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/img/192px.png" />
+    <link rel="manifest" href="/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Aeropress Timer</title>
   </head>
   <body>
@@ -167,7 +167,9 @@
         </div>
 
         <div class="statistics__main">
-          <p class="page__title">ALL: <span class="statistics__total"></span></p>
+          <p class="page__title statistics__title">
+            ALL: <span class="statistics__total"></span>
+          </p>
           <div class="statistics__buttons">
             <button class="statistics__button monthly__button underline">
               Monthly
@@ -208,7 +210,7 @@
             </button>
           </div>
           <div class="page__main">
-            <p class="page__title">Do you want to stop making coffee?</p>
+            <p class="page__title modal__title">Do you want to stop making coffee?</p>
             <div class="page__buttons">
               <button class="page__button modal__accept">Yes</button>
               <button class="page__button modal__cancel">No</button>
@@ -217,42 +219,35 @@
         </div>
       </div>
 
-      
-      
       <div class="pwa__mobile hide page">
         <div class="page__header"></div>
         <div class="page__main">
           <p class="page__title">
-            Enjoy progressive web application: <br>
-            On android devices select Install Application from the menu. <br>
-            On iOS devices click on the share button and in the opening popup "Add to Home Screen".
+            Enjoy progressive web application: <br />
+            On android devices select Install Application from the menu. <br />
+            On iOS devices click on the share button and in the opening popup
+            "Add to Home Screen".
           </p>
           <button class="page__button pwa__button">OK</button>
         </div>
         <div class="page__footer"></div>
       </div>
-      
     </div>
     <div class="pwa__desktop">
-
       <div class="pwa__main">
         <p class="page__title">
           This application is designed to use on mobile devices. Open this
-          website on mobile device and add it to home page. Enjoy a progressive web application and use it offline.
+          website on mobile device and add it to home page. Enjoy a progressive
+          web application and use it offline.
         </p>
       </div>
-
     </div>
-
-
 
     <script src="/app.js"></script>
     <script>
-      // sprawdzamy czy przeglądarka posiada wsparcie dla service workera
       if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
-
 document.querySelector('#show').addEventListener('click', () => {
   const iconUrl = document.querySelector('select').selectedOptions[0].value;
   let imgElement = document.createElement('img');

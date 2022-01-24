@@ -34,9 +34,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   text-align: center;
   text-transform: uppercase;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page__step {
@@ -48,6 +51,7 @@
 .page__close {
   position: absolute;
   right: 0;
+  padding: 1rem;
   background: none;
   border: none;
 }
@@ -85,6 +89,7 @@
           justify-content: space-between;
   text-align: center;
   margin-bottom: 1rem;
+  line-height: 45px;
 }
 
 .page__title {
@@ -96,7 +101,7 @@
   display: block;
   width: 140px;
   height: 46px;
-  margin-top: 2rem;
+  margin: 2rem 1rem;
   font-size: 18px;
   background-color: #ffe053;
   border: 1px solid #000000;
@@ -107,22 +112,23 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
 .page__statistic {
   display: block;
-  width: 100px;
-  margin-top: 4rem;
+  width: 140px;
+  margin-top: 5rem;
   background: none;
   border: none;
 }
 
 .page__statistic p {
-  border-bottom: 2px solid #000;
+  text-decoration: underline;
+  font-size: 18px;
 }
 
 .page__arrow {
@@ -139,13 +145,13 @@
           justify-content: space-evenly;
   width: 100%;
   margin-bottom: 1rem;
-  padding: 0.5rem;
-  background-color: #FFE053;
+  background-color: #ffe053;
 }
 
 .statistics__button {
   font-size: 18px;
   text-transform: uppercase;
+  padding: 0.6rem;
   background: none;
   border: none;
 }
@@ -169,8 +175,18 @@
 .statistics__close {
   position: absolute;
   right: 0;
+  padding: 0.8rem;
   background: none;
   border: none;
+}
+
+.statistics__title {
+  font-size: 40px;
+  margin-bottom: 2rem;
+}
+
+.statistics__monthly, .statistics__yearly {
+  font-size: 18px;
 }
 
 .pwa__desktop {
@@ -184,7 +200,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #FFE053;
+  background-color: #ffe053;
 }
 
 .pwa__main {
@@ -209,6 +225,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   top: 0;
@@ -227,7 +246,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 198px;
+  height: 250px;
+  width: 95%;
   padding: 0 1rem;
   background-color: #fff;
 }
@@ -244,6 +264,12 @@
 .modal__close button {
   border: none;
   background: none;
+  padding: 0.5rem;
+}
+
+.modal__title {
+  margin-top: 1.0rem;
+  margin-bottom: 0.5rem;
 }
 
 .step1 {
@@ -259,7 +285,7 @@
 }
 
 .underline {
-  border-bottom: 2px solid black;
+  text-decoration: underline;
 }
 
 @media (min-width: 820px) {
