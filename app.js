@@ -45,6 +45,9 @@ const monthlyButton = document.querySelector(".monthly__button");
 const yearlyButton = document.querySelector(".yearly__button");
 // statistics close button 
 const closeStatistics = document.querySelector(".statistics__close");
+// pwa__mobile 
+const pwaPage = document.querySelector(".pwa__mobile");
+const pwaBtn = document.querySelector(".pwa__button");
 // first countdown |step3
 const step3Timer = document.querySelector(".step3__timer");
 const step3Start = document.querySelector(".step3__start");
@@ -64,7 +67,7 @@ const step5Reset = document.querySelector(".step5__reset");
 const step5Next = document.querySelector(".step5__next");
 
 // step3 countdown function
-const startingMinutesStep3 = 0.1;
+const startingMinutesStep3 = 0.5;
 let timeStep3 = startingMinutesStep3 * 60;
 
 const updateCountdownStep3 = function () {
@@ -99,7 +102,7 @@ step3Start.addEventListener("click", step3Countdown);
 
 // step4 countdown function
 
-const startingMinutesStep4 = 0.1;
+const startingMinutesStep4 = 1.5;
 let timeStep4 = startingMinutesStep4 * 60;
 
 const updateCountdownStep4 = function () {
@@ -128,8 +131,6 @@ const step4Countdown = function () {
     clearTimeout(step4Interval);
     step4Reset.classList.add("hide");
     step4Start.classList.remove("hide");
-
-
   }
 
   step4Reset.addEventListener("click", clearStep4Countdown);
@@ -173,6 +174,10 @@ const step5Countdown = function () {
 };
 step5Start.addEventListener("click", step5Countdown);
 
+// Setting curent date
+const current = new Date();
+const month = current.toLocaleString("en-US", { month: "long" });
+const year = current.getFullYear();
 // previous page functions
 step2PreviousPage = () => {
   step2Page.classList.toggle("hide");
@@ -203,7 +208,6 @@ statisticsPreviousPage = () => {
 const nextPage1 = function () {
   step1Page.classList.add("hide");
   step2Page.classList.toggle("hide");
-  setStartingData();
 };
 const nextPage2 = function () {
   step2Page.classList.toggle("hide");
@@ -239,9 +243,19 @@ const closeModal = function () {
 const modalHome = function(){
   location.reload()
 }
+// PWA message function - detect first visit on website and show message
+const acceptPwaMessage = function () {
+  setStartingData();
+  pwaPage.classList.add('hide');
+  step1Page.classList.remove('hide')
+}
+if (localStorage.getItem(2022) == null){
+  pwaPage.classList.remove('hide');
+  step1Page.classList.add('hide');
+} 
+
 
 // Statistics functions
-
 const showStatistics = function () {
   step1Page.classList.toggle("hide");
   statisticsPage.classList.toggle("hide");
@@ -268,10 +282,7 @@ const showYearlyStats = function () {
 
 
 
-// Setting curent date
-const current = new Date();
-const month = current.toLocaleString("en-US", { month: "long" });
-const year = current.getFullYear();
+
 
 // Setting starting localstorage
 const setStartingData = () => {
@@ -437,5 +448,6 @@ closeStatistics.addEventListener("click", statisticsPreviousPage);
 // Modal component close buttons
 modalCancelBtn.addEventListener('click', closeModal);
 modalCloseBtn.addEventListener('click', closeModal);
-
-modalAcceptBtn.addEventListener('click', modalHome)
+modalAcceptBtn.addEventListener('click', modalHome);
+// PWA Actions
+pwaBtn.addEventListener('click', acceptPwaMessage)
