@@ -6,5 +6,5 @@ Counts monthly / yearly coffee stats based on your browser's localmemory <br/>
 ### Technologies used
 I created this App with Vanilla Javascript, SCSS, PWA tools<br/>
 
-## DEMO
-SOON
+## LIVE
+[http://aeropresstimer.xyz/](http://aeropresstimer.xyz/)
